@@ -1,0 +1,12 @@
+version: "3"
+services:
+  r_studio:
+    image: r
+    build: .
+    ports:
+      - "8787:8787"
+    volumes:
+      - ./project:/home/rstudio/project
+      - ./docs:/home/rstudio/doc_resources
+    environment:
+      - DISABLE_AUTH=true
